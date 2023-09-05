@@ -5,7 +5,8 @@ import { expect } from '@storybook/jest'
 
 import Button from './button'
 
-// Default metadata of the story https://storybook.js.org/docs/react/api/csf#default-export
+// Default metadata of the story
+// https://storybook.js.org/docs/react/api/csf#default-export
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
     component: Button,
@@ -32,21 +33,27 @@ const meta: Meta<typeof Button> = {
             description: 'add any function'
         },
     },
-} as Meta
+} satisfies Meta<typeof Button>
 export default meta
 
-// The story type for the component https://storybook.js.org/docs/react/api/csf#named-story-exports
+// The story type for the component
+// https://storybook.js.org/docs/react/api/csf#named-story-exports
 type Story = StoryObj<typeof Button>;
+
+// Options
 export const Primary: Story = {
     args: {
         label: 'Primary',
         size: 'large',
         type: 'primary',
     },
+    parameters: {
+        type: 'figma',
+        url: 'https://www.figma.com/file/WLi9EDLNHy8yZMad3awf9s/Components'
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
         const primaryButton = canvas.getByRole('button', { name: /Primary/i })
-
 
         await expect(primaryButton.innerText).toBe('Primary')
         await expect(primaryButton).toHaveStyle('background-color: #1ea7fd')

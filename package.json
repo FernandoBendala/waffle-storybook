@@ -14,7 +14,8 @@
         "serve": "http-server ./build -p 8001 -o",
         "lint": "eslint .",
         "lint:fix": "eslint --fix",
-        "test": "test-storybook -- --coverage --watchAll"
+        "test": "test-storybook -- --coverage --watchAll",
+        "chromatic": "npx chromatic --project-token=chpt_f98fd244efe5fb4 --build-script-name build:storybook"
     },
     "np": {
         "publish": false,
@@ -30,6 +31,7 @@
         "@rollup/plugin-node-resolve": "^15.0.2",
         "@rollup/plugin-typescript": "^11.1.1",
         "@storybook/addon-a11y": "^7.4.0",
+        "@storybook/addon-designs": "^7.0.5",
         "@storybook/addon-essentials": "^7.0.23",
         "@storybook/addon-interactions": "^7.4.0",
         "@storybook/addon-links": "^7.0.23",
@@ -49,6 +51,7 @@
         "@typescript-eslint/eslint-plugin": "^5.59.11",
         "@typescript-eslint/parser": "^5.59.11",
         "babel-loader": "^8.2.2",
+        "chromatic": "^7.0.0",
         "eslint": "^8.43.0",
         "eslint-plugin-mdx": "^2.2.0",
         "eslint-plugin-react": "^7.32.2",
