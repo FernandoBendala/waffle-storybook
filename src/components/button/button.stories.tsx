@@ -48,8 +48,10 @@ export const Primary: Story = {
         type: 'primary',
     },
     parameters: {
-        type: 'figma',
-        url: 'https://www.figma.com/file/WLi9EDLNHy8yZMad3awf9s/Components'
+        design: {
+            type: 'figma',
+            url: 'https://64f6e1f6b0c995507571affe-veucxoosjt.chromatic.com/iframe.html?designEmbed=true&singleStory=true&id=components-button--primary'
+        }
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)

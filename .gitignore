@@ -8,6 +8,10 @@ yarn.lock
 /lib
 /coverage
 .jest-test-results.json
+.env
+
+# Logs
+build-storybook.log
 
 # Misc
 .DS_Store
